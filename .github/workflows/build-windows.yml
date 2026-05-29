@@ -1,0 +1,57 @@
+name: Build WaveText Windows Installer
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar dependencias
+        run: |
+          pip install faster-whisper customtkinter tkinterdnd2 openai pillow pyinstaller
+
+      - name: Converter icone para .ico
+        run: |
+          python -c "from PIL import Image; img=Image.open('icon_1024.png'); img.save('icon.ico', format='ICO', sizes=[(256,256),(128,128),(64,64),(32,32),(16,16)])"
+
+      - name: Build com PyInstaller
+        run: |
+          pyinstaller `
+            --name "WaveText" `
+            --windowed `
+            --icon icon.ico `
+            --add-data "icon_256.png;." `
+            --collect-all tkinterdnd2 `
+            --collect-all customtkinter `
+            --collect-all faster_whisper `
+            --collect-all ctranslate2 `
+            --hidden-import PIL `
+            --hidden-import PIL.ImageTk `
+            --hidden-import openai `
+            --noconfirm `
+            --log-level WARN `
+            main.py
+
+      - name: Instalar Inno Setup
+        run: choco install innosetup --yes --no-progress
+
+      - name: Criar instalador .exe
+        run: iscc setup.iss
+
+      - name: Upload instalador
+        uses: actions/upload-artifact@v4
+        with:
+          name: WaveText-Windows-Installer
+          path: Output\WaveText-Setup.exe

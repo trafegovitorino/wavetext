@@ -1,0 +1,10 @@
+.venv/
+build/
+dist/
+Output/
+__pycache__/
+*.spec
+*.pyc
+*.icns
+*.log
+.wavetext.json

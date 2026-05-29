@@ -1,0 +1,33 @@
+WAVETEXT — INSTALAÇÃO NO WINDOWS
+=================================
+
+Siga os passos abaixo UMA ÚNICA VEZ.
+Depois é só usar o atalho na Área de Trabalho.
+
+
+PASSO 1 — Instalar o Python (gratuito)
+---------------------------------------
+1. Acesse: https://www.python.org/downloads/
+2. Clique em "Download Python"
+3. Execute o instalador
+4. IMPORTANTE: marque a opção "Add Python to PATH"
+5. Clique em Install Now
+
+
+PASSO 2 — Instalar o WaveText
+-------------------------------
+1. Abra a pasta WaveText
+2. Dê dois cliques em: instalar_windows.bat
+3. Aguarde a instalação terminar (2-5 minutos)
+4. Um atalho "WaveText" será criado na sua Área de Trabalho
+
+
+PASSO 3 — Usar o programa
+--------------------------
+Dê dois cliques no atalho WaveText na Área de Trabalho.
+Pronto.
+
+
+DÚVIDAS
+--------
+Fale com quem te enviou este programa.
