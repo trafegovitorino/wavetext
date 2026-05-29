@@ -8,3 +8,4 @@ __pycache__/
 *.icns
 *.log
 .wavetext.json
+WaveText.pkg
