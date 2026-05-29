@@ -15,7 +15,7 @@ SetupIconFile=icon.ico
 Name: "brazilianportuguese"; MessagesFile: "compiler:Languages\BrazilianPortuguese.isl"
 
 [Tasks]
-Name: "desktopicon"; Description: "Criar icone na Area de Trabalho"; GroupDescription: "Icones adicionais:"; Flags: checked
+Name: "desktopicon"; Description: "Criar icone na Area de Trabalho"; GroupDescription: "Icones adicionais:"
 
 [Files]
 Source: "dist\WaveText\*"; DestDir: "{app}"; Flags: ignoreversion recursesubdirs createallsubdirs
